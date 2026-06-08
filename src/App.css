@@ -1,6 +1,6 @@
 .app-root {
   min-height: 100svh;
-  background: transparent;
+  background: linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(255,248,239,0.95) 35%, rgba(255,248,239,1) 100%);
   position: relative;
   display: flex;
   flex-direction: column;
@@ -8,8 +8,12 @@
 
 .scroll-area {
   overflow-y: auto;
-  padding-bottom: 96px;
+  padding-bottom: 120px;
   -webkit-overflow-scrolling: touch;
+}
+.scroll-area::-webkit-scrollbar {
+  width: 0;
+  height: 0;
 }
 
 .bottom-nav {
@@ -22,6 +26,8 @@
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(12px);
   border-top: 1px solid #f0e8dc;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 16px 16px 0 0;
   display: flex;
   z-index: 50;
   padding-bottom: env(safe-area-inset-bottom, 0);
@@ -42,6 +48,9 @@
 
 .nav-button:hover {
   transform: translateY(-1px);
+}
+.nav-button[aria-pressed="true"] {
+  background: rgba(230, 81, 0, 0.06);
 }
 
 .modal-overlay {
